@@ -8,4 +8,8 @@ public class Carnivorous extends Plant{
         return LiquidType.PROTEIN_DRINK;
     }
 
+    public double calculateLiquidAmount() {
+        return (0.2 * height) + 0.1;   // liter per dag
+    }
+
 }

@@ -8,4 +8,8 @@ public class Palm extends Plant{
         return LiquidType.TAP_WATER;
     }
 
+    public double calculateLiquidAmount() {
+        return 0.5 * height;      // liter per dag
+    }
+
 }

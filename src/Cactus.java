@@ -6,17 +6,19 @@ public class Cactus extends Plant{
         super(name, height);
     }
 
-    public LiquidType getLiquidType() {
+    public static LiquidType getLiquidType() {
         return LiquidType.MINERAL_WATER;
     }
 
-    public double calculateLiquidAmount() {
+    public static double calculateLiquidAmount() {
         return 0.02;    // liter per dag
     }
 
-    public String printMessage() {
-        return System.out.format(new Locale("sv", "SE"), "Kaktusen %s ska få %.2f liter %s%n",
+    /*public String printMessage() {
+        return super.printMessage() +
+
+        System.out.format(new Locale("sv", "SE"), "Kaktusen %s ska få %.2f liter %s%n",
                 igge.getName(), igge.calculateLiquidAmount(), igge.getLiquidType());
-    }
+    }*/
 
 }

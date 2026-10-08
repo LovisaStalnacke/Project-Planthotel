@@ -4,11 +4,11 @@ public class Palm extends Plant{
         super(name, height);
     }
 
-    public LiquidType getLiquidType() {
+    public static LiquidType getLiquidType() {
         return LiquidType.TAP_WATER;
     }
 
-    public double calculateLiquidAmount() {
+    public static double calculateLiquidAmount() {
         return 0.5 * height;      // liter per dag
     }
 

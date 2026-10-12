@@ -2,46 +2,59 @@ import java.util.Scanner;
 
 public class Plant {
 
-    String name;
-    static double height;
+    private String name;
+    protected double height;
+    private PlantType plantType;
 
-    public Plant(String name, double height) {
+    public Plant(String name, double height, PlantType plantType) {
         this.name = name;
         this.height = height;
+        this.plantType = plantType;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getHeight() {
-        return height;
+    public LiquidType getLiquidType() {
+        return null;
     }
 
+    public double calculateLiquidAmount() {
+        return 0.0;
+    }
+
+    @Override
+    public String toString() {
+        // this.calculateLiquidAmount() kommer automatiskt att köra underklassens formel
+        return "Växten " + getName() + " (" + plantType + ") ska få " +
+                this.calculateLiquidAmount() + " liter " + this.getLiquidType();
+    }
 
     public static void findPlant() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Vilken växt ska vattnas?");
-        String response = scan.nextLine();
+        String response = scan.nextLine().trim();
 
-        response = String.valueOf(Main.plantList.get(response));
+        Plant foundPlant = null;
 
-        if (response != null) {
-            System.out.println(response);
+        for (Plant plant : Main.plantList.values()) {
+            // Här jämförs växtens namn med användarens svar oavsett stora/små bokstäver
+            if (plant.getName().equalsIgnoreCase(response)) {
+                foundPlant = plant;
+                break;
+            }
+        }
+        if (foundPlant != null) {
+            System.out.println(foundPlant);
         } else {
             System.out.println("Ingen växt med det namnet hittades");
         }
-
-
-
     }
 
 
-
-    public String toString() {
-        return "Växten " + getName() + " ska få " + Cactus.calculateLiquidAmount() + " liter " + Cactus.getLiquidType();
+    public PlantType getPlantType() {
+        return plantType;
     }
-
-
 
 }

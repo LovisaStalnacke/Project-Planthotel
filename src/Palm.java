@@ -1,14 +1,15 @@
 public class Palm extends Plant{
 
-    public Palm(String name, double height) {
-        super(name, height);
+    public Palm(String name, double height, PlantType plantType) {
+        super(name, height, plantType);
     }
 
-    public static LiquidType getLiquidType() {
+    public LiquidType getLiquidType() {
         return LiquidType.TAP_WATER;
     }
 
-    public static double calculateLiquidAmount() {
+    @Override
+    public double calculateLiquidAmount() {
         return 0.5 * height;      // liter per dag
     }
 

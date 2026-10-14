@@ -1,60 +1,35 @@
 import java.util.Scanner;
 
-public class Plant {
+// en abstrakt klass används här för att objekt skapas av subklasserna
+public abstract class Plant implements CalculateLiquidAmount{
 
-    private String name;
+    private final String name;
     protected double height;
-    private PlantType plantType;
+    private static PlantType plantType;
 
     public Plant(String name, double height, PlantType plantType) {
         this.name = name;
         this.height = height;
-        this.plantType = plantType;
+        Plant.plantType = plantType;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public LiquidType getLiquidType() {
         return null;
     }
 
-    public double calculateLiquidAmount() {
-        return 0.0;
+    public static PlantType getPlantType() {
+        return plantType;
     }
 
     @Override
     public String toString() {
-        // this.calculateLiquidAmount() kommer automatiskt att köra underklassens formel
-        return "Växten " + getName() + " (" + plantType + ") ska få " +
-                this.calculateLiquidAmount() + " liter " + this.getLiquidType();
+        return "Växten " + getName() + " (" + Plant.getPlantType() + ") ska få " +
+                calculateLiquidAmount() + " liter " + getLiquidType();
     }
 
-    public static void findPlant() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Vilken växt ska vattnas?");
-        String response = scan.nextLine().trim();
-
-        Plant foundPlant = null;
-
-        for (Plant plant : Main.plantList.values()) {
-            // Här jämförs växtens namn med användarens svar oavsett stora/små bokstäver
-            if (plant.getName().equalsIgnoreCase(response)) {
-                foundPlant = plant;
-                break;
-            }
-        }
-        if (foundPlant != null) {
-            System.out.println(foundPlant);
-        } else {
-            System.out.println("Ingen växt med det namnet hittades");
-        }
-    }
-
-
-    public PlantType getPlantType() {
-        return plantType;
-    }
 
 }

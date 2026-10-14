@@ -1,5 +1,4 @@
-
-public class Cactus extends Plant{
+public class Cactus extends Plant {
 
     public Cactus(String name, double height, PlantType plantType) {
         super(name, height, plantType);
@@ -11,7 +10,6 @@ public class Cactus extends Plant{
 
     @Override
     public double calculateLiquidAmount() {
-        return 0.02;    // liter per dag
+        return 0.02;
     }
-
 }

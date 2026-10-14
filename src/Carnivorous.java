@@ -1,4 +1,4 @@
-public class Carnivorous extends Plant{
+public class Carnivorous extends Plant {
 
     public Carnivorous(String name, double height, PlantType plantType) {
         super(name, height, plantType);
@@ -10,7 +10,6 @@ public class Carnivorous extends Plant{
 
     @Override
     public double calculateLiquidAmount() {
-        return (0.2 * height) + 0.1;   // liter per dag
+        return (0.2 * height) + 0.1;
     }
-
 }

@@ -1,4 +1,4 @@
-public class Palm extends Plant{
+public class Palm extends Plant {
 
     public Palm(String name, double height, PlantType plantType) {
         super(name, height, plantType);
@@ -10,7 +10,6 @@ public class Palm extends Plant{
 
     @Override
     public double calculateLiquidAmount() {
-        return 0.5 * height;      // liter per dag
+        return 0.5 * height;
     }
-
 }

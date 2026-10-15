@@ -3,8 +3,8 @@ Växterna solar under UV-lampor och får exakt den mängd näringsvätska som ju
 
 Programmet frågar användaren vilken växt som ska få vätska, räknar ut hur mycket vätska just den växten behöver och visar mängden och vilken sorts vätska som ska serveras.
 
-- En meddelanderuta visas med texten ”Vilken växt ska få vätska?”
+- Ett meddelande visas med texten ”Vilken växt ska få vätska?”
 - Växtens namn skrivs in på den tomma raden
-- Programmet visar en ny ruta som talar om:
+- Programmet visar ett nytt meddelande som talar om:
   - hur mycket vätska växten ska ha
   - vilken sorts vätska det är (kranvatten, mineralvatten eller proteindryck)

@@ -13,7 +13,7 @@ public class Main {
             System.out.println("Våra gäster just nu är: \n");
 
             for (Plant plant : HotelGuests.plantList.values()){
-                System.out.println(Plant.getPlantType() + ": " + plant.getName());
+                System.out.println(plant.getPlantType() + ": " + plant.getName());
             }
 
             System.out.print("\n");

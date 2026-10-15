@@ -5,12 +5,12 @@ public abstract class Plant implements CalculateLiquidAmount{
 
     private final String name;
     protected double height;
-    private static PlantType plantType;
+    private PlantType plantType;
 
     public Plant(String name, double height, PlantType plantType) {
         this.name = name;
         this.height = height;
-        Plant.plantType = plantType;
+        this.plantType = plantType;
     }
 
     public String getName() {
@@ -21,13 +21,13 @@ public abstract class Plant implements CalculateLiquidAmount{
         return null;
     }
 
-    public static PlantType getPlantType() {
+    public PlantType getPlantType() {
         return plantType;
     }
 
     @Override
     public String toString() {
-        return "Växten " + getName() + " (" + Plant.getPlantType() + ") ska få " +
+        return "Växten " + getName() + " (" + getPlantType() + ") ska få " +
                 calculateLiquidAmount() + " liter " + getLiquidType();
     }
 

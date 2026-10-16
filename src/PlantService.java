@@ -2,10 +2,20 @@ import java.util.Scanner;
 
 public class PlantService {
 
-    public static void findPlant() {
+    public static boolean findPlant() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Vilken växt ska vattnas?");
+        System.out.println("Vilken växt ska vattnas? \n(Skriv 'avsluta' för att stänga programmet)");
         String response = scan.nextLine().trim();
+
+        if (response.equalsIgnoreCase("avsluta")) {
+            System.out.println("Växthotellet stängs för idag, hejdå!");
+            return false;
+        }
+
+        if (response.isEmpty()) {
+            System.out.println("Du måste skriva namnet på växten, försök igen!");
+            return true;
+        }
 
         Plant foundPlant = null;
 
@@ -18,10 +28,9 @@ public class PlantService {
         if (foundPlant != null) {
             System.out.println(foundPlant);
         } else {
-            System.out.println("Ingen växt med det namnet hittades");
+            System.out.println("Ingen växt med namnet '" + response + "' hittades, kontrollera stavningen!");
         }
+        return true;
     }
-
-
 
 }

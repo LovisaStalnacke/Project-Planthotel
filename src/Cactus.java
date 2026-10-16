@@ -8,6 +8,7 @@ public class Cactus extends Plant {
         return LiquidType.MINERAL_WATER;
     }
 
+    // polymorfism: metoden finns i parent-klassen men overrides här med ett annat retur-värde
     @Override
     public double calculateLiquidAmount() {
         return 0.02;

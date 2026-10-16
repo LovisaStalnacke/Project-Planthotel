@@ -18,7 +18,7 @@ public class Main {
 
             System.out.print("\n");
 
-            PlantService.findPlant();
+            running = PlantService.findPlant();
 
         }
     }

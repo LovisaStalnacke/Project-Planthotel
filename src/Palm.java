@@ -10,6 +10,6 @@ public class Palm extends Plant {
 
     @Override
     public double calculateLiquidAmount() {
-        return 0.5 * height;
+        return 0.5 * getHeight();
     }
 }

@@ -10,6 +10,6 @@ public class Carnivorous extends Plant {
 
     @Override
     public double calculateLiquidAmount() {
-        return (0.2 * height) + 0.1;
+        return (0.2 * getHeight()) + 0.1;
     }
 }

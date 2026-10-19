@@ -19,6 +19,8 @@ public class PlantService {
 
         Plant foundPlant = null;
 
+        /* Polymorfism - loopar igenom Plant-objekt men tittar på varje objekt och ser vilken subklass
+        de tillhör och kör calculateLiquidAmount för just den växten */
         for (Plant plant : HotelGuests.plantList.values()) {
             if (plant.getName().equalsIgnoreCase(response)) {
                 foundPlant = plant;

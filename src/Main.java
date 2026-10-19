@@ -12,6 +12,7 @@ public class Main {
             System.out.println("\n--- VÄXTHOTELLET GREENEST ---");
             System.out.println("Våra gäster just nu är: \n");
 
+            // Polymorfism - loopar igenom alla Plant-objekt och hittar sorten genom getPlantType
             for (Plant plant : HotelGuests.plantList.values()){
                 System.out.println(plant.getPlantType() + ": " + plant.getName());
             }

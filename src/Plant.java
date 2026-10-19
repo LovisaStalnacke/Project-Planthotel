@@ -1,14 +1,16 @@
-import java.util.Scanner;
 
-// abstract klass för att den definierar vad Plant är
-// en abstrakt klass används här för att objekt skapas av subklasserna, inte denna parent-klass och så den inte behöver ha metoden från interfacet
-// implementerar ett Interface för att subklasserna måste ha metoden calculateLiquidAmount()
-// subklasserna behöver inte "implements" för att de ärver detta redan, det blir redundant
+/*En abstrakt klass - objekt skapas endast av subklasserna, inte denna parent-klass för den
+behöver inte ha metoden från interfacet.
+Klassen implementerar ett Interface för att subklasserna måste ha metoden calculateLiquidAmount().
+Subklasserna behöver inte "implements" för att de ärver detta redan. */
+
 public abstract class Plant implements CalculateLiquidAmount{
 
+    /* Inkapsling - privata instansvariabler som inte kan ändras av andra klasser
+    och kan bara blir tillgängliga genom getters. */
     private final String name;
     private double height;
-    private PlantType plantType;
+    private final PlantType plantType;   // Inkapsling - variabeln är oföränderlig pga 'final'
 
     public Plant(String name, double height, PlantType plantType) {
         this.name = name;
@@ -16,7 +18,7 @@ public abstract class Plant implements CalculateLiquidAmount{
         this.plantType = plantType;
     }
 
-    // inkapsling genom getters
+    // Inkapsling genom getters
     public String getName() {
         return this.name;
     }
@@ -25,7 +27,7 @@ public abstract class Plant implements CalculateLiquidAmount{
         return height;
     }
 
-    // abstrakt metod som är gemensam för alla subklasser men som inte används av denna parent-klass
+    // Abstrakt metod som är gemensam för alla subklasser men som inte används av denna parent-klass
     public abstract LiquidType getLiquidType();
 
     public PlantType getPlantType() {

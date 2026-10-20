@@ -7,7 +7,7 @@ public class Main {
 
         boolean running = true;
 
-        while (running == true) {
+        while (running) {
 
             try {
                 System.out.println("\n--- VÄXTHOTELLET GREENEST ---");
@@ -22,8 +22,8 @@ public class Main {
 
                 running = PlantService.findPlant();
 
-            } catch (NullPointerException e) {
-                System.out.println("Ett oväntat fel inträffade, växtdata kunde inte hämtas.");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Fel: " + e.getMessage());
             }
             }
         }

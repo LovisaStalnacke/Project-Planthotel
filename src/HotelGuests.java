@@ -3,8 +3,7 @@ import java.util.TreeMap;
 
 public class HotelGuests {
 
-    /* Polymorfism - Map gör det möjligt att lägga in objekt från subklasserna
-    istället för att behöva göra tre olika listor */
+    // Polymorfism
     public static Map<String, Plant> plantList = new TreeMap<>();
 
     public static void hotelGuests() {

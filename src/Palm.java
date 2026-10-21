@@ -1,10 +1,10 @@
-// Arv - denna klass ärver variabler och metoder från Plant
+// Arv
 public class Palm extends Plant {
 
     private static final double BASE_FACTOR = 0.5;
 
     public Palm(String name, double height, PlantType plantType) {
-        super(name, height, plantType); // Arv - anropar konstruktor från Plant
+        super(name, height, plantType); // Arv
     }
 
     public LiquidType getLiquidType() {
@@ -13,6 +13,6 @@ public class Palm extends Plant {
 
     @Override
     public double calculateLiquidAmount() {
-        return BASE_FACTOR * getHeight();  // Arv - metoden getHeight ärvs från Plant
+        return BASE_FACTOR * getHeight();  // Arv
     }
 }
